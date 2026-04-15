@@ -4,8 +4,7 @@
 
 
 
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Georgia', serif; background: var(--cream); color: var(--deep); }
+
 
 /* ── LOADING ── */
 .loading {

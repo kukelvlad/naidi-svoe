@@ -1,0 +1,157 @@
+/* ════════════════════════════════════
+   Найди своё — стили приложения
+   ════════════════════════════════════ */
+
+:root {
+  --gold: #C9A84C;
+  --gold2: #E8C97A;
+  --goldp: #FDF6E3;
+  --deep: #1C1A2E;
+  --deep2: #2A2645;
+  --cream: #FAF6F0;
+  --muted: #7A7A8A;
+  --sage: #5A8A60;
+  --border: rgba(201,168,76,0.22);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Georgia', serif; background: var(--cream); color: var(--deep); }
+
+/* ── LOADING ── */
+.loading {
+  min-height: 100vh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  background: var(--deep); color: rgba(255,255,255,0.6);
+  gap: 16px;
+}
+.loadingIcon {
+  font-size: 2.5rem; color: var(--gold2);
+  animation: spin 3s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── REGISTER ── */
+.registerWrap {
+  min-height: 100vh; display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(150deg, var(--deep) 0%, var(--deep2) 60%, #3A1F52 100%);
+  padding: 40px 20px;
+}
+.registerBox {
+  background: #fff; border-radius: 28px; padding: 48px 44px;
+  max-width: 460px; width: 100%;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+  border: 1px solid var(--border);
+}
+.registerIcon { font-size: 2.8rem; margin-bottom: 14px; text-align: center; }
+.registerBox h1 {
+  font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--deep);
+  margin-bottom: 8px; text-align: center;
+}
+.registerSub { font-size: 0.88rem; color: var(--muted); margin-bottom: 28px; text-align:center; line-height:1.65; }
+
+.field { margin-bottom: 18px; }
+.field label {
+  display: block; font-size: 0.75rem; font-weight: 700; color: var(--deep);
+  margin-bottom: 6px; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.field input {
+  width: 100%; padding: 13px 16px;
+  border: 1.5px solid rgba(0,0,0,0.12); border-radius: 12px;
+  font-family: 'Georgia', serif; font-size: 0.95rem; color: var(--deep);
+  background: var(--goldp); outline: none; transition: border-color 0.2s;
+}
+.field input:focus { border-color: var(--gold); }
+.optional { font-weight: 400; color: var(--muted); text-transform: none; font-size: 0.72rem; }
+.fieldHint { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+
+.zodiacPill {
+  display: flex; align-items: center; gap: 12px;
+  background: linear-gradient(135deg, var(--deep), var(--deep2));
+  border-radius: 14px; padding: 13px 16px; margin-bottom: 18px;
+}
+.zodiacEmoji { font-size: 1.8rem; }
+.zodiacPill strong { display: block; color: var(--gold2); font-size: 0.88rem; margin-bottom: 2px; }
+.zodiacPill small { font-size: 0.74rem; color: rgba(255,255,255,0.5); }
+
+.error { color: #c0392b; font-size: 0.84rem; margin-bottom: 12px; text-align: center; }
+
+.submitBtn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--deep); border: none; cursor: pointer;
+  font-family: 'Georgia', serif; font-weight: 700; font-size: 1rem;
+  padding: 15px; border-radius: 50px; margin-top: 8px;
+  box-shadow: 0 6px 22px rgba(201,168,76,0.35);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.submitBtn:hover:not(:disabled) { transform: translateY(-2px); }
+.submitBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── RECOMMENDATIONS ── */
+.recsWrap {
+  max-width: 600px; margin: 0 auto; padding: 0 0 48px;
+  min-height: 100vh;
+}
+
+.recsHeader {
+  background: linear-gradient(135deg, var(--deep), var(--deep2));
+  padding: 28px 24px 20px; position: sticky; top: 0; z-index: 10;
+}
+.recsHeaderTop {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.recsHeader h2 {
+  font-family: 'Georgia', serif; font-size: 1.2rem; color: #fff;
+}
+.dateChip {
+  font-size: 0.72rem; color: var(--muted);
+  background: rgba(255,255,255,0.07); border: 1px solid var(--border);
+  border-radius: 20px; padding: 4px 12px;
+}
+.metaBar {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: 0.78rem; color: var(--gold2); margin-bottom: 8px;
+}
+.recsHint { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+
+/* ── CARDS ── */
+.cardsList { padding: 16px 16px; display: flex; flex-direction: column; gap: 10px; }
+
+.card {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: #fff; border-radius: 16px; padding: 16px 14px;
+  border: 1.5px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: opacity 0.25s;
+}
+.cardHidden { opacity: 0.35; background: #f5f5f5; }
+.cardEmoji { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.cardBody { flex: 1; min-width: 0; }
+.cardTitle { font-weight: 700; font-size: 0.88rem; color: var(--deep); margin-bottom: 4px; }
+.cardText { font-size: 0.82rem; color: #444; line-height: 1.55; margin-bottom: 6px; }
+.cardSource {
+  font-size: 0.68rem; background: var(--goldp);
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 2px 9px; color: #8A6A20; display: inline-block;
+}
+.cardToggle {
+  flex-shrink: 0; margin-top: 4px; width: 22px; height: 22px;
+  border-radius: 6px; border: 2px solid rgba(0,0,0,0.15);
+  background: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; transition: all 0.2s; line-height: 1;
+}
+.cardToggleActive { border-color: var(--gold); background: var(--gold); color: var(--deep); }
+
+.hiddenNote {
+  text-align: center; font-size: 0.76rem; color: var(--muted);
+  padding: 0 16px 16px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .registerBox { padding: 32px 20px; }
+  .recsHeader { padding: 20px 16px 16px; }
+  .recsHeader h2 { font-size: 1rem; }
+}

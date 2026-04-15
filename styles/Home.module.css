@@ -2,17 +2,7 @@
    Найди своё — стили приложения
    ════════════════════════════════════ */
 
-:root {
-  --gold: #C9A84C;
-  --gold2: #E8C97A;
-  --goldp: #FDF6E3;
-  --deep: #1C1A2E;
-  --deep2: #2A2645;
-  --cream: #FAF6F0;
-  --muted: #7A7A8A;
-  --sage: #5A8A60;
-  --border: rgba(201,168,76,0.22);
-}
+
 
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Georgia', serif; background: var(--cream); color: var(--deep); }
